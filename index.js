@@ -1,8 +1,4 @@
-const express = require('express');
-const app = express();
+const customExpress = require("./config/customExpress")
 const port = 3000;
+const app = customExpress()
 app.listen(port, () => console.log(`Listen on port ${port}`)); 
-
-app.get('/atendimentos', (req, res) => {
-    res.send('Você está na rota de atendimentos e está em um get.')
-})
