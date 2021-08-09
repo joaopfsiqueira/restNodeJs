@@ -5,6 +5,9 @@ Repositório criado para arquivos do curso de rest com nodejs, realizado na plat
 
 ## O que foi aprendido.
 - Rota com express;
+- Consign
+- Body-parser para conseguir ler os dados que são recebidos no body.
+
 
 
 
