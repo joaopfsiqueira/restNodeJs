@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/joaopfsiqueira/restNodeJs/issues"
   },
-  "homepage": "https://github.com/joaopfsiqueira/restNodeJs#readme"
+  "homepage": "https://github.com/joaopfsiqueira/restNodeJs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
