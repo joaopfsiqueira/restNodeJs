@@ -1,3 +1,5 @@
+//controllers vão decidir o que cada rota vai fazer.
+
 const Atendimento = require('../models/atendimentos')
 
 module.exports = app => {
