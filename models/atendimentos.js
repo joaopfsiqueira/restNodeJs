@@ -99,7 +99,7 @@ class Atendimento {
             if(erro){
                 res.status(400).json(erro)
             } else {
-                res.status(200).json(`${id} deletado com sucesso"`)
+                res.status(200).json(`${id} deletado com sucesso`)
             }
         })
     }
