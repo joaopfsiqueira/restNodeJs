@@ -42,6 +42,34 @@ class Atendimento {
         }
     }
     }
+
+    lista(res) {
+        const sql = 'SELECT * FROM tblatendimentos'
+
+        conexao.query(sql, (erro, resultados) => {
+            if(erro) {
+                res.status(400).json(erro)
+            } else {
+                res.status(200).json(resultados)
+            }
+        })
+    }
+
+    buscaPorId(id, res) {
+        const sql = `SELECT * FROM tblatendimentos WHERE id = ${id}`
+
+        conexao.query(sql, (erro, resultados) => {
+            //CÓDIGO ABAIXO PARA DEVOLVER APENAS UM OBJETO, PARA QUE NÃO RETORNE UM ARRAY.
+            const atendimento = resultados[0]
+
+            if(erro){
+                res.status(400).json(erro)
+            } else {
+                res.status(200).json(atendimento)
+            }
+        })
+    }
+
 }
 
 module.exports = new Atendimento;

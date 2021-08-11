@@ -10,8 +10,8 @@ Repositório criado para arquivos do curso de rest com nodejs, realizado na plat
 - Conexão com mysql2 (de uma forma mais simples)
 - Diferente do outro projeto, foi feito conexão e criação sem utilizar sequelize, eu diria que é o mesmo que fazer "na mão"
 - Tabelas no mysql usando um script node;
-- Utilizando a biblioteca "moment" para formatar datas que serão enviadas ao bd.
-
+- Utilizando a biblioteca "momentjs" para formatar datas que serão enviadas ao bd.
+- Validação de entrada.
 
 
 
