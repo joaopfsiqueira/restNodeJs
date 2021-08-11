@@ -33,11 +33,11 @@ class Atendimento {
 
         const sql = 'INSERT INTO tblatendimentos SET ?'
         
-        conexao.query(sql, atendimentoDatado), atendimento, (erro, resultados) => {
+        conexao.query(sql, atendimentoDatado), atendimento, (erro) => {
             if(erro) {
                 res.status(400).json(erro)
             } else {
-                res.status(201).json(resultados)
+                res.status(201).json(atendimento)
             }
         }
     }
@@ -69,7 +69,38 @@ class Atendimento {
             }
         })
     }
+ 
+    altera(id, valores, res) {
+        //se o valor data for alterado, formatar a data:
+        if(valores.data) {
+            valores.data = moment(valores.data, 'DD/MM/YYYY').format('YYYY-MM-DD HH:MM:SS')
+        }
 
+        //O "?" utilizado na query abaixo diz que espera um determinado valor.
+        const sql = 'UPDATE tblatendimentos SET ? WHERE id = ?'
+
+        //os valores de "?" estão dentro do array abaixo, onde informamos o que os ? vão receber.
+        conexao.query(sql, [valores, id], (erro) => {
+            if(erro){
+                res.status(400).json(erro)
+            } else {
+                //vai retornar os valores que foram adicionados.
+                res.status(200).json({...valores, id})
+            }
+        } )
+    }
+
+    deleta(id, res) {
+        const sql = 'DELETE FROM tblatendimentos WHERE id= ?'
+
+        conexao.query(sql, [id], (erro) => {
+            if(erro){
+                res.status(400).json(erro)
+            } else {
+                res.status(200).json(`${id} deletado com sucesso"`)
+            }
+        })
+    }
 }
 
 module.exports = new Atendimento;
