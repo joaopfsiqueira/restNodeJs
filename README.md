@@ -14,6 +14,8 @@ Se trata de uma database chamada "agenda_petshop" com uma tabela "tblatendimento
 - Tabelas no mysql usando um script node;
 - Utilizando a biblioteca "momentjs" para formatar datas que serão enviadas ao bd.
 - Validação de entrada.
+- Quando usar PUT e quando usar PATCH;
+- Retornar objeto para o cliente.
 
 
 
