@@ -16,6 +16,8 @@ Se trata de uma database chamada "agenda_petshop" com uma tabela "tblatendimento
 - Validação de entrada.
 - Quando usar PUT e quando usar PATCH;
 - Retornar objeto para o cliente.
+- Entrada e saída de dados com Buffer
+- Entrada e saída de dados com Streams
 
 
 
