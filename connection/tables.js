@@ -3,6 +3,7 @@ class Tables {
       this.conexao = conexao;
 
       this.criaTableAtendimentos()
+      this.criarPets()
     }
 
     criaTableAtendimentos(){
@@ -13,6 +14,17 @@ class Tables {
                 console.log(erro)
             } else {
                 console.log('Tabela atendimento criada com sucesso.')
+            }
+        })
+    }
+
+    criarPets() {
+        const query = 'CREATE TABLE IF NOT EXISTS tblpets (id int NOT NULL AUTO_INCREMENT, nome varchar(50), imagem varchar(200), primary key (id))'
+        this.conexao.query(query, erro => {
+            if(erro) {
+                console.log(erro)
+            } else {
+                console.log('Tabela pet criada com sucesso.')
             }
         })
     }

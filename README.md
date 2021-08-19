@@ -18,6 +18,9 @@ Se trata de uma database chamada "agenda_petshop" com uma tabela "tblatendimento
 - Retornar objeto para o cliente.
 - Entrada e saída de dados com Buffer
 - Entrada e saída de dados com Streams
+- Como criar uma nova rota para upload de imagem
+- Formas de salvar arquivos no servidor
+- Segurança ao subir arquivos
 
 
 
