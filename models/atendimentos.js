@@ -2,6 +2,7 @@
 
 const moment = require('moment');
 const conexao = require('../connection/index');
+const axios = require('axios');
 
 class Atendimento {
     adiciona(atendimento, res) {
@@ -60,13 +61,15 @@ class Atendimento {
     buscaPorId(id, res) {
         const sql = `SELECT * FROM tblatendimentos WHERE id = ${id}`
 
-        conexao.query(sql, (erro, resultados) => {
+        conexao.query(sql, async (erro, resultados) => {
             //CÓDIGO ABAIXO PARA DEVOLVER APENAS UM OBJETO, PARA QUE NÃO RETORNE UM ARRAY.
             const atendimento = resultados[0]
-
+            const cpf = atendimento.cliente
             if(erro){
                 res.status(400).json(erro)
             } else {
+                const {data} = await axios.get(`http://localhost:8082/${cpf}`)
+                atendimento.cliente = data
                 res.status(200).json(atendimento)
             }
         })

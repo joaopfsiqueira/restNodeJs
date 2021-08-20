@@ -21,7 +21,7 @@ Se trata de uma database chamada "agenda_petshop" com uma tabela "tblatendimento
 - Como criar uma nova rota para upload de imagem
 - Formas de salvar arquivos no servidor
 - Segurança ao subir arquivos
-
+- Como consumir uma API dentro do Node
 
 
 ## Diversos NPM utilizados.
