@@ -3,6 +3,7 @@
 const moment = require('moment');
 const conexao = require('../connection/db/index');
 const axios = require('axios');
+const repositorio = require('../repositorios/atendimento');
 
 class Atendimento {
     adiciona(atendimento, res) {
@@ -30,19 +31,15 @@ class Atendimento {
         const existemErros = erros.length
 
         if(existemErros) {
-            res.status(400).json(erros)
+            return new Promise((resolve, reject) => reject(erros))
         }else {
         const atendimentoDatado = {...atendimento, dataCriacao, data}
-
-        const sql = 'INSERT INTO tblatendimentos SET ?'
         
-        conexao.query(sql, atendimentoDatado), atendimento, (erro) => {
-            if(erro) {
-                res.status(400).json(erro)
-            } else {
-                res.status(201).json(atendimento)
-            }
-        }
+        return repositorio.adiciona(atendimentoDatado)
+            .then(results => {
+                const id = results.insertId
+                return { ...atendimento,id}
+            })
     }
     }
 

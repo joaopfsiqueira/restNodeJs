@@ -1,6 +1,6 @@
 const moment = require('moment');
-const conexao = require('../connection/index');
-const uploadDeArquivo = require('../arquivos/uploadDeArquivos')
+const conexao = require('../connection/db/index');
+const uploadDeArquivo = require('../connection/arquivos/uploadDeArquivos')
 
 class Pet {
     adiciona(pet, res) {

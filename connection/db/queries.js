@@ -4,7 +4,7 @@ const conexao = require('./index')
 const Query = (query, params = '') => {
     return new Promise((resolve, reject) => {
         conexao.query(query, params, (erros, results, campos) => {
-            if(erro){
+            if(erros){
                 reject(erros);
             } else {
                 resolve(results);
@@ -13,3 +13,5 @@ const Query = (query, params = '') => {
     })
 
 }
+
+module.exports = Query;

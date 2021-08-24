@@ -1,6 +1,6 @@
 const customExpress = require("./config/customExpress")
-const conexao = require('./connection/index');
-const Tables = require('./connection/tables');
+const conexao = require('./connection/db/index');
+const Tables = require('./connection/db/tables');
 const port = 3000;
 
 
