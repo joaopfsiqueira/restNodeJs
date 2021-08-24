@@ -22,6 +22,7 @@ Se trata de uma database chamada "agenda_petshop" com uma tabela "tblatendimento
 - Formas de salvar arquivos no servidor
 - Segurança ao subir arquivos
 - Como consumir uma API dentro do Node
+- O que são e como usar promises
 
 
 ## Diversos NPM utilizados.

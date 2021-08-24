@@ -1,7 +1,7 @@
 //Models conecta na base da dados para pesquisar, alterar, adicionar ou remover.
 
 const moment = require('moment');
-const conexao = require('../connection/index');
+const conexao = require('../connection/db/index');
 const axios = require('axios');
 
 class Atendimento {
