@@ -5,6 +5,8 @@ const Atendimento = require('../models/atendimentos')
 module.exports = app => {
     app.get('/atendimentos', (req, res) => {
         Atendimento.lista(res)
+        .then(results => res.json(results)) //isso já retorna 200 no res, só de n informar, por ser o padrão!
+        .catch(erros => res.status(400).json(erros))
     })
 
     app.get('/atendimentos/:id', (req, res) => {
